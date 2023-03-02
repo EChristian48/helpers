@@ -1,1 +1,1 @@
-export { default as promptFormatter } from './promptsFormatter'
+export * from './promptsFormatter'

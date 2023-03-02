@@ -1,8 +1,11 @@
 import { chunk } from '@/helpers'
 
-const promptFormatter = (value: string, tagBeforeNewline = 1) =>
+export const promptFormatter = (value: string, tagBeforeNewline = 1) =>
   chunk(value.split(' '), tagBeforeNewline)
     .map((value) => value.join(', '))
     .join(', \n')
 
-export default promptFormatter
+export const promptFormatterArray = (value: string[], tagBeforeNewline = 1) =>
+  chunk(value, tagBeforeNewline)
+    .map((value) => value.join(', '))
+    .join(', \n')

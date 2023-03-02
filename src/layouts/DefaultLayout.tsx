@@ -1,4 +1,5 @@
-import { MENUS } from '@/helpers'
+import { NavLinkWithActive } from '@/components'
+import { MENUS } from '@/constants'
 import {
   AppShell,
   Box,
@@ -7,7 +8,6 @@ import {
   Header,
   MediaQuery,
   Navbar,
-  NavLink,
   ScrollArea,
   Stack,
   Text,
@@ -45,10 +45,9 @@ export default function DefaultLayout({ children }: PropsWithChildren) {
             <Navbar.Section grow component={ScrollArea}>
               <Stack spacing="xs">
                 {MENUS.map(({ label, link }, index) => (
-                  <NavLink
+                  <NavLinkWithActive
                     key={index}
                     label={label}
-                    component={Link}
                     onClick={() => setOpened(false)}
                     to={link}
                   />

@@ -1,4 +1,9 @@
-import { Danbooru2Prompt, ErrorPage, Home, PromptIntersection } from '@/modules'
+import {
+  Danbooru2Prompt,
+  ErrorPage,
+  Home,
+  PromptsIntersection
+} from '@/modules'
 import { createBrowserRouter } from 'react-router-dom'
 import App from './App'
 
@@ -20,8 +25,8 @@ const router = createBrowserRouter([
             element: <Danbooru2Prompt />
           },
           {
-            path: '/prompt-intersection',
-            element: <PromptIntersection />
+            path: '/prompts-intersection',
+            element: <PromptsIntersection />
           }
         ]
       }
