@@ -1,10 +1,18 @@
 import { lazy } from 'react'
 import { createHashRouter } from 'react-router-dom'
 import App from './App'
+import {
+  DANBOORU2PROMPT_PATH,
+  DANBOORU_INTERSECTION_PATH,
+  PROMPTS_INTERSECTION_PATH
+} from './constants'
 import { ErrorPage } from './modules'
 
 const Home = lazy(() => import('@/modules/Home'))
 const Danbooru2Prompt = lazy(() => import('@/modules/Danbooru2Prompt'))
+const DanbooruIntersection = lazy(
+  () => import('@/modules/DanbooruIntersection')
+)
 const PromptsIntersection = lazy(() => import('@/modules/PromptsIntersection'))
 
 const router = createHashRouter([
@@ -20,11 +28,15 @@ const router = createHashRouter([
             element: <Home />
           },
           {
-            path: '/danbooru2prompt',
+            path: DANBOORU2PROMPT_PATH,
             element: <Danbooru2Prompt />
           },
           {
-            path: '/prompts-intersection',
+            path: DANBOORU_INTERSECTION_PATH,
+            element: <DanbooruIntersection />
+          },
+          {
+            path: PROMPTS_INTERSECTION_PATH,
             element: <PromptsIntersection />
           }
         ]

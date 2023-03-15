@@ -73,7 +73,7 @@ export default function Danbooru2Prompt() {
       </Text>
 
       <form onSubmit={form.onSubmit(() => refetch())} onReset={form.onReset}>
-        <Grid>
+        <Grid align="end">
           <Grid.Col sm={10}>
             <TextInput
               placeholder="Danbooru post URL"
