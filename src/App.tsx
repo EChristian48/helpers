@@ -1,10 +1,14 @@
+import { Text } from '@mantine/core'
+import { Suspense } from 'react'
 import { Outlet } from 'react-router-dom'
 import { DefaultLayout } from './layouts'
 
 export default function App() {
   return (
     <DefaultLayout>
-      <Outlet />
+      <Suspense fallback={<Text>Loading...</Text>}>
+        <Outlet />
+      </Suspense>
     </DefaultLayout>
   )
 }
